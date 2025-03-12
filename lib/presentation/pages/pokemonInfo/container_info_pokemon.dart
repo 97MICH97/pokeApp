@@ -15,11 +15,6 @@ class ContainerInfoPokemon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('datos del contenedor');
-    print(chips);
-    print(weight);
-    print(Height);
-    print(power);
     return  Container(
       width:MediaQuery.of(context).size.width * 0.90,
       height: 450,
@@ -40,7 +35,6 @@ class ContainerInfoPokemon extends StatelessWidget {
             width: 300,
             child: Basestats(powerData: stats,) ,
           )
-
         ],
       ),
     );

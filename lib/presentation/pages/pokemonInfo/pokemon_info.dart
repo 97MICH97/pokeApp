@@ -40,7 +40,7 @@ class _PokemonInfoState extends State<PokemonInfo> {
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
+    return isLoaing ? const Center(child: CircularProgressIndicator()) : Scaffold(
       backgroundColor: Colors.orange,
       appBar: AppBar(
         backgroundColor: Colors.orange,
@@ -53,16 +53,16 @@ class _PokemonInfoState extends State<PokemonInfo> {
               fontWeight: FontWeight.w700,
             )),
             Padding(padding: EdgeInsets.only(left:MediaQuery.of(context).size.width * 0.3),
-              child: Text(pokemon[0]['id'].toString(),style: TextStyle(
+              child: Text('#${pokemon[0]['id'].toString()}',style: TextStyle(
                 color: Color(0XFFFFFFFF),
-                fontSize: 12,
+                fontSize: 24,
                 fontWeight: FontWeight.w700,
               ) )
               ,)
           ],
         ),
       ),
-      body: isLoaing ? const Center(child: CircularProgressIndicator()) :  Stack(
+      body:   Stack(
         children: [
           Column(
             children: [
@@ -78,9 +78,9 @@ class _PokemonInfoState extends State<PokemonInfo> {
             ],
           ),
           Positioned(
-              left:MediaQuery.of(context).size.width * 0.3,
-              top: MediaQuery.of(context).size.width * 0.4,
-              child: Expanded(child: Image.network(pokemon[0]['image'])))
+              left:MediaQuery.of(context).size.width * 0.2,
+              top: MediaQuery.of(context).size.width * 0.1,
+              child: SizedBox(width: 250, height: 320,child: Image.network(pokemon[0]['image'], fit: BoxFit.cover),) )
         ],
       ),
     );

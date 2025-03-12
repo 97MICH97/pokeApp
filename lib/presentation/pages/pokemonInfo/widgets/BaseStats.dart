@@ -15,8 +15,6 @@ class _BasestatsState extends State<Basestats> {
     for (var stat in widget.powerData) {
       stats.add({"label": '${stat.name}', "value": '${stat.baseStat}'});
     }
-
-    print(stats);
   }
 
   @override

@@ -15,13 +15,12 @@ class Chips extends StatelessWidget {
               Padding(padding: EdgeInsets.all(3),
               child: Container(
                 alignment: Alignment.center,
-                width: 42,
-                height: 20,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.green
                 ),
-                child: Text(item),
+                child:Padding(padding: EdgeInsets.all(5),
+                    child: Text(item),) ,
               ),)
           ],
         ));
