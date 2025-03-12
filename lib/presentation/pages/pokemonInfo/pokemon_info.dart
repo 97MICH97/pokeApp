@@ -73,14 +73,15 @@ class _PokemonInfoState extends State<PokemonInfo> {
                 ],
               ),
               SizedBox(height: 25,),
-              ContainerInfoPokemon(chips: pokemon[0]["abilities"], weight: pokemon[0]['weight'].toString(), Height: pokemon[0]['height'].toString(), power: pokemon[0]['types'], stats: pokemon[0]['stats'],),
+              Center(child: ContainerInfoPokemon(chips: pokemon[0]["abilities"], weight: pokemon[0]['weight'].toString(), Height: pokemon[0]['height'].toString(), power: pokemon[0]['types'], stats: pokemon[0]['stats'],),)
+              
 
             ],
           ),
           Positioned(
               left:MediaQuery.of(context).size.width * 0.2,
               top: MediaQuery.of(context).size.width * 0.1,
-              child: SizedBox(width: 250, height: 320,child: Image.network(pokemon[0]['image'], fit: BoxFit.cover),) )
+              child: SizedBox(width: 250, height: 320,child: Image.network(pokemon[0]['image'], fit: BoxFit.contain),) )
         ],
       ),
     );
