@@ -82,10 +82,10 @@ class _PokemonsState extends State<Pokemons> {
               childAspectRatio: 1
             ),
             itemBuilder: (context, index) {
-                providerPokemon.setName(pokemon[index]['name'].toString());
-                providerPokemon.setDataPokemon(pokemon[index]['id'].toString(), pokemon[index]['name'].toString(), pokemon[index]['image'].toString());
+                providerPokemon.setName(pokemon[index]['name']);
+                providerPokemon.setDataPokemon(pokemon[index]['id'].toString(), pokemon[index]['name'], pokemon[index]['image']);
                 return InkWell(
-                  child: PokemonContainer(namePokemon: pokemon[index]['name'].toString() , numberPokemon: pokemon[index]['id'].toString(), imagePokemon: pokemon[index]['image'].toString()),
+                  child: PokemonContainer(namePokemon: pokemon[index]['name'] , numberPokemon: pokemon[index]['id'].toString(), imagePokemon: pokemon[index]['image']),
                   onTap: () => context.push('/PokemonInfo/' + pokemon[index]['id'].toString() ),
                 );
             },

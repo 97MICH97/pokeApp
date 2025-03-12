@@ -39,7 +39,7 @@ class _BasestatsState extends State<Basestats> {
             SizedBox(width: 10),
             SizedBox(
               width: 30,
-              child: Text(info["value"].toString(), style: TextStyle(fontWeight: FontWeight.bold)),
+              child: Text(info["value"], style: TextStyle(fontWeight: FontWeight.bold)),
             ),
             Expanded(
               child: LinearProgressIndicator(
