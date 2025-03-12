@@ -48,7 +48,7 @@ class SearchPokemonDelegate extends SearchDelegate<String>{
             var findPokemon = providerPokemon.getPokemonById(searchResults[index]);
               return InkWell(
               child: PokemonContainer(namePokemon: findPokemon?['name'], numberPokemon: findPokemon?['id'], imagePokemon: findPokemon?['image']),
-              onTap: () => context.pushReplacement('/PokemonInfo/'+ findPokemon?['id']),
+              onTap: () => context.push('/PokemonInfo/'+ findPokemon?['id']),
             );
           };
         },

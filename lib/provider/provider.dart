@@ -6,7 +6,6 @@ class PokemonProvider extends ChangeNotifier{
   void setName(String newName){
     if(!_pokemonName.contains(newName)){
       _pokemonName.add(newName);
-      notifyListeners();
     }
 
   }

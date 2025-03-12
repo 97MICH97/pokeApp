@@ -20,7 +20,6 @@ class AboutRow extends StatelessWidget {
             Icon(Icons.height),
             Text('${height} m  \nHeight'),
             const VerticalDivider( thickness: 5, color: Colors.black),
-            Icon(Icons.height),
             for(var item in powers)
               Text('${item} \n')
             ,

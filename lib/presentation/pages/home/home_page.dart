@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pokemon_app/presentation/pages/home/widgets/pokemon_container.dart';
+import 'package:pokemon_app/presentation/pages/loadingPage/loadingPage.dart';
 import 'package:pokemon_app/provider/provider.dart';
 import 'package:provider/provider.dart';
 import '../../../services/remote_services.dart';
@@ -70,7 +71,7 @@ class _PokemonsState extends State<Pokemons> {
                 await showSearch(context: context, delegate: SearchPokemonDelegate());
               })
       ),
-      body: isLoaing ? const Center(child: CircularProgressIndicator(color: Color(0XFFFFFFFF),)) :
+      body: isLoaing ?  LoadingPage() :
       Padding(padding: EdgeInsets.all(10),
           child: GridView.builder(
               itemCount: pokemon.length,

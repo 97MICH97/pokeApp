@@ -41,7 +41,7 @@ class _PokemonInfoState extends State<PokemonInfo> {
   @override
   Widget build(BuildContext context) {
 
-    return isLoaing ? const LoadingPage()  : Scaffold(
+    return isLoaing ? LoadingPage()   : Scaffold(
       backgroundColor: Colors.orange,
       appBar: AppBar(
         backgroundColor: Colors.orange,
