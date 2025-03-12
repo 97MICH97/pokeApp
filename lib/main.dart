@@ -6,7 +6,10 @@ import 'package:pokemon_app/provider/provider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (_) => PokemonProvider(),
+    child: const MyApp(),
+    ));
 }
 
 class MyApp extends StatelessWidget {
@@ -15,8 +18,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(create: (context) => PokemonProvider(),
-    child: MaterialApp.router(
+    return MaterialApp.router(
       routerConfig: GoRouter(initialLocation: '/Pokemon', routes: [
         GoRoute(path: '/Pokemon', builder: (context,state) => Pokemons()),
         GoRoute(path: '/PokemonInfo/:pokemonId', builder: (context,state)
@@ -24,7 +26,6 @@ class MyApp extends StatelessWidget {
         return PokemonInfo(pokemonId: id,);
         })
         ]),
-      )
       );
   }
 }
