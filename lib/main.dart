@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       routerConfig: GoRouter(initialLocation: '/Pokemon', routes: [
         GoRoute(path: '/Pokemon', builder: (context,state) => Pokemons()),
         GoRoute(path: '/PokemonInfo/:pokemonId', builder: (context,state)

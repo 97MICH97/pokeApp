@@ -70,7 +70,7 @@ class _PokemonsState extends State<Pokemons> {
                 await showSearch(context: context, delegate: SearchPokemonDelegate());
               })
       ),
-      body: isLoaing ? const Center(child: CircularProgressIndicator()) :
+      body: isLoaing ? const Center(child: CircularProgressIndicator(color: Color(0XFFFFFFFF),)) :
       Padding(padding: EdgeInsets.all(10),
           child: GridView.builder(
               itemCount: pokemon.length,
@@ -85,7 +85,7 @@ class _PokemonsState extends State<Pokemons> {
                 providerPokemon.setDataPokemon(pokemon[index]['id'].toString(), pokemon[index]['name'].toString(), pokemon[index]['image'].toString());
                 return InkWell(
                   child: PokemonContainer(namePokemon: pokemon[index]['name'].toString() , numberPokemon: pokemon[index]['id'].toString(), imagePokemon: pokemon[index]['image'].toString()),
-                  onTap: () => context.pushReplacement('/PokemonInfo/'+ pokemon[index]['id'].toString()),
+                  onTap: () => context.push('/PokemonInfo/' + pokemon[index]['id'].toString() ),
                 );
             },
           )

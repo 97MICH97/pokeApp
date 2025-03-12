@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+import 'package:pokemon_app/presentation/pages/loadingPage/loadingPage.dart';
 import '../../../services/remote_services.dart';
 import 'container_info_pokemon.dart';
 
@@ -40,19 +41,18 @@ class _PokemonInfoState extends State<PokemonInfo> {
   @override
   Widget build(BuildContext context) {
 
-    return isLoaing ? const Center(child: CircularProgressIndicator()) : Scaffold(
+    return isLoaing ? const LoadingPage()  : Scaffold(
       backgroundColor: Colors.orange,
       appBar: AppBar(
         backgroundColor: Colors.orange,
         title: Row(
           children: [
-            IconButton(onPressed: () => { context.go('/Pokemon')}, icon: Icon(Icons.arrow_back,)),
             Text(pokemon[0]['name'], style: TextStyle(
               color: Color(0XFFFFFFFF),
               fontSize: 24,
               fontWeight: FontWeight.w700,
             )),
-            Padding(padding: EdgeInsets.only(left:MediaQuery.of(context).size.width * 0.3),
+            Padding(padding: EdgeInsets.only(left:MediaQuery.of(context).size.width * 0.2),
               child: Text('#${pokemon[0]['id'].toString()}',style: TextStyle(
                 color: Color(0XFFFFFFFF),
                 fontSize: 24,
